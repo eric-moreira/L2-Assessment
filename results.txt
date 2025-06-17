@@ -1,0 +1,69 @@
+==================== Task 1
+(.venv) ericmoreira@Mac-Lykos L2-assessment % python3 nginx_parsing.py 
+DataFrame created successfully!
+         client_ip cache_status                 timestamp       requested_host  ...  upstream_status  http_method      requested_uri http_protocol
+0   49.217.128.165          HIT 2025-05-17 00:41:58+08:00     api.customer.com  ...              503          GET             /login      HTTP/1.1
+1  124.217.216.236          HIT 2025-05-17 03:18:38+08:00     api.customer.com  ...              200          GET  /static/style.css      HTTP/1.1
+2   107.234.219.12          HIT 2025-05-17 09:38:27+08:00     api.customer.com  ...              404          GET  /static/style.css      HTTP/1.1
+3    122.8.218.215       BYPASS 2025-05-17 09:51:47+08:00  domain.customer.com  ...              304          GET       /api/v1/data      HTTP/1.1
+4    24.74.238.114       BYPASS 2025-05-17 09:17:27+08:00  domain.customer.com  ...              503          GET             /login      HTTP/1.1
+
+[5 rows x 20 columns]
+
+--- Statistical Analysis ---
+
+---- Top 5 IPS requests ----
+client_ip
+221.34.171.155    383
+145.98.68.30      380
+110.105.174.63    361
+24.74.238.114     355
+32.90.145.204     354
+Name: count, dtype: int64
+
+---- % of 4xx/5xx errors ----
+HTTP 4xx/5xx: 3405 from 7200 (47.29%)
+
+---- Avg Response Size for GET method ----
+Average: 2537.31 bytes
+
+
+--Task 3--- 
+---- Evaluating Potential Threats ----
+
+Sensitive attempts from 221.34.171.155:
+{'/login': 383}
+Error rate for 221.34.171.155: 63.71%
+
+
+Sensitive attempts from 145.98.68.30:
+{'/login': 380}
+Error rate for 145.98.68.30: 63.42%
+
+
+Sensitive attempts from 110.105.174.63:
+{'/login': 361}
+Error rate for 110.105.174.63: 66.20%
+
+
+Sensitive attempts from 24.74.238.114:
+{'/login': 355}
+Error rate for 24.74.238.114: 69.86%
+
+
+Sensitive attempts from 32.90.145.204:
+{'/login': 354}
+Error rate for 32.90.145.204: 66.67%
+
+---- Rate Limit Analysis ----
+
+[INFO] Total unique IPs flagged with HTTP status 429: 8
+Flagged IPs: 
+221.34.171.155
+49.217.128.165
+24.74.238.114
+110.105.174.63
+49.17.221.77
+188.230.178.192
+145.98.68.30
+32.90.145.204

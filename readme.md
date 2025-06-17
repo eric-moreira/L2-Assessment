@@ -42,11 +42,11 @@ Output: The script should generate a summary of potential attack patterns, inclu
 
 ### 4. SQL Querying (Database Analysis)
 
-Using the provided `traffic.db` SQLite database, write SQL queries to:
+  Using the provided `traffic.db` SQLite database, write SQL queries to:
 
-* Find the hour of the day with the highest average response time.
-* Identify any IPs that sent more than 350 requests with a 429 status code (rate-limited).
-* Calculate the total bytes sent for requests where response time > 500ms.
+  * Find the hour of the day with the highest average response time.
+  * Identify any IPs that sent more than 350 requests with a 429 status code (rate-limited).
+  * Calculate the total bytes sent for requests where response time > 500ms.
 
 > [!IMPORTANT]
 > Submit both the SQL queries and their results.
